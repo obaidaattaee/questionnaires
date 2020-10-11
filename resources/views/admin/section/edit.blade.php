@@ -15,8 +15,14 @@
                         back to sections
                     </button>
                 </a>
+                <a href="{{ route('section.status' , ['section' => $section->id] ) }}">
+                    <button
+                            class="bg-{{ $section->closed_at == null ? "red" : "blue"}}-500 hover:bg-{{ $section->closed_at == null ? "red" : "blue"}}-700 text-white font-bold py-2 px-5 mt-4 mx-4  rounded-full">
+                        {{ $section->closed_at == null ? "close" : "open"}}
+                    </button>
+                </a>
 
-                    <form class="py-12 mr-1/4" action="{{ route('section.update' , ['section' => $section->id]) }}" method="POST">
+                <form class="py-12 mr-1/4" action="{{ route('section.update' , ['section' => $section->id]) }}" method="POST">
                         @method('POST')
                         @csrf
                         <div class="md:flex md:items-center mb-6">

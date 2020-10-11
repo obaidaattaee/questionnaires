@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Section;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -59,5 +60,13 @@ class SectionController extends Controller
     {
         return view('admin.section.show')
             ->with('section' , $section) ;
+    }
+
+    public function status(Section $section)
+    {
+        $section->closed_at = $section->closed_at == null ? date('Y-m-d H:i:s') : null ;
+//dd($section->closed_at);
+        $section->save();
+        return redirect(route('section.edit' , ['section' => $section->id]));
     }
 }

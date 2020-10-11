@@ -30,6 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('sections', 'SectionController@index')->name('sections');
         Route::get('sections/create', 'SectionController@create')->name('section.create');
         Route::post('sections/create', 'SectionController@store')->name('section.store');
+        Route::get('sections/{section}/status', 'SectionController@status')->name('section.status');
         Route::get('sections/{section}/update', 'SectionController@edit')->name('section.edit');
         Route::get('sections/{section}', 'SectionController@show')->name('section.show');
         Route::post('sections/{section}/update', 'SectionController@update')->name('section.update');
