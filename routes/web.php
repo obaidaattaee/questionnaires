@@ -24,7 +24,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('dashboard');
 
 
-
     // routes for sections
     Route::namespace('App\Http\Controllers\Admin')->group(function () {
         Route::get('sections', 'SectionController@index')->name('sections');
@@ -35,26 +34,28 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('sections/{section}', 'SectionController@show')->name('section.show');
         Route::post('sections/{section}/update', 'SectionController@update')->name('section.update');
         Route::get('sections/{section}/delete', 'SectionController@destroy')->name('section.delete');
+        Route::get('questionanswer/{answer}', 'SectionController@deleteAnswer')->name('questionanswer.delete');
 
-    // end routres for section
+        // end routres for section
 
-        Route::get('questionanswer/{answer}' , 'SectionController@deleteAnswer')->name('questionanswer.delete');
-    // routes for questiones
-    Route::get('/section/{section}/question/create', 'QuestionController@create')->name('question.create');
-    Route::post('/section/{section}/question/create', 'QuestionController@store')->name('question.store');
-    Route::get('/section/{section}/question/{question}/update', 'QuestionController@edit')->name('question.edit');
-    Route::post('/section/{section}/question/{question}/update', 'QuestionController@update')->name('question.update');
-    Route::get('/section/{section}/question/{question}/delete', 'QuestionController@destroy')->name('question.delete');
-    //end routes for questions
+        // routes for questiones
+        Route::get('/section/{section}/question/create', 'QuestionController@create')->name('question.create');
+        Route::post('/section/{section}/question/create', 'QuestionController@store')->name('question.store');
+        Route::get('/section/{section}/question/{question}/update', 'QuestionController@edit')->name('question.edit');
+        Route::post('/section/{section}/question/{question}/update', 'QuestionController@update')->name('question.update');
+        Route::get('/section/{section}/question/{question}/delete', 'QuestionController@destroy')->name('question.delete');
+        //end routes for questions
 
 
-//        Route::get('/questionnaire/{section}', 'QuestionnaireController@formShow');
-//        Route::post('/questionnaire/{section}', 'QuestionnaireController@formStore')->name('questionnaire.store');
+        // update excel file
+        Route::get('/file/{section}', 'ExcelFileController@storeExcel')->name('file.store');
+
+    });
 });
-});
+// routes for questionnaire and excel file
 Route::namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/questionnaire/{section}', 'QuestionnaireController@formShow')->name('questionnaire.show');
     Route::post('/questionnaire/{section}', 'QuestionnaireController@formStore')->name('questionnaire.store');
-    Route::get('/file/{section}', 'ExcelFileController@storeExcel')->name('file.store');
     Route::get('/download/file/{section}', 'ExcelFileController@downloadFile')->name('file.download');
+// end routes for questionnaire and excel file
 });
