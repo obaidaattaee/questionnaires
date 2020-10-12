@@ -14,7 +14,11 @@ class QuestionnaireController extends Controller
 {
     public function formShow($section_title)
     {
-//        dd($section_title);
+
+        /*
+         * تقوم بارجاع نموذج ادخال الاسئله للمستخدم
+         */
+
         $section = Section::where('title' , $section_title)
             ->where('closed_at' , null)
             ->first();
@@ -31,6 +35,9 @@ class QuestionnaireController extends Controller
     public function formStore(\Illuminate\Http\Request $request ,Section $section)
     {
 
+        /*
+         * تقوم بتسجيل الاجابات من المستخدم
+         */
         $array_validation = [];
         $image_feild = '';
         foreach ($section->questions as $question){
@@ -41,17 +48,17 @@ class QuestionnaireController extends Controller
             }
         }
 
-//dd($request->all(), $array_validation , $image_feild);
 
         if (isset($image_feild)){
             $array_validation = array_merge($array_validation , [$image_feild."_file" => 'required']);
             unset($array_validation[$image_feild]);
-            $imageName = basename($request[$image_feild]->store("storage/images"));
+            $imageName = asset('storage/images/').basename($request[$image_feild]->store("storage/images"));
             $request[$image_feild."_file"] = [ 'image'=> ['image' => "$imageName"]];
         }
-
+        /*
+         * هنا عملية التحقق من القيم و تخزين الصورة
+         */
         $data = $request->validate($array_validation);
-//        dd($data);
         $data_json = [] ;
         foreach ($section->questions as $question ){
             $data_json = array_merge($data_json , [$question->title => $data[str_replace(' ' , '_' , $question->feialdType->type == 'image' ? $question->title.'_file' : $question->title )]]);
@@ -61,7 +68,9 @@ class QuestionnaireController extends Controller
             'section_id' => $section->id ,
             'value' => $data_json
         ]);
-//        dd($data_json);
+        /*
+         * ارجاع صفحة الخاتمة بعد الاجابة على الاسئلة
+         */
         return view('forms.conclusion')
             ->with('section' , $section);
     }

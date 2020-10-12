@@ -14,17 +14,26 @@ class SectionController extends Controller
 {
     public function index()
     {
+        /*
+         * ارجاع صفحة  عرض  الاقسام
+         */
         $sections = Section::get();
         return view('admin.section.sections')
             ->with('sections' , $sections);
     }
     public function create()
     {
+        /*
+         * ارجاع صفحة انشاء قسم جديد
+         */
         return view('admin.section.create');
     }
 
     public function store(Request $request)
     {
+        /*
+         * تخزين قسم جديد
+         */
         $section = $request->validate([
             'title' => ['required']
         ]);
@@ -36,12 +45,18 @@ class SectionController extends Controller
     }
     public function edit(Section $section)
     {
+        /*
+         *  ارجاع صفحة تعديل قسم
+         */
         return view('admin.section.edit')
             ->with("section" , $section);
     }
 
     public function update(Section $section ,Request $request)
     {
+        /*
+         * تحديث بيانات القسم
+         */
         $data = $request->validate([
             'title' => ['required']
         ]);
@@ -52,6 +67,9 @@ class SectionController extends Controller
 
     public function destroy(Section $section)
     {
+        /*
+         * حذف قسم
+         */
         $section->delete();
         session()->flash('msg' , 's: section deleted successfully ');
         return redirect(route('sections'));
@@ -59,25 +77,32 @@ class SectionController extends Controller
 
     public function show(Section $section)
     {
+        /*
+         * عرض قسم بكل اسئلته
+         */
         return view('admin.section.show')
             ->with('section' , $section) ;
     }
 
     public function status(Section $section)
     {
+        /*
+         * تغيير حالة القسم
+         */
         $section->closed_at = $section->closed_at == null ? date('Y-m-d H:i:s') : null ;
-//dd($section->closed_at);
+
         $section->save();
         return redirect(route('section.edit' , ['section' => $section->id]));
     }
 
     public function deleteAnswer(QuestionAnswer $answer)
     {
+        /*
+         * حذف اجابة
+         */
         $answer->delete();
-//        dd($answer);
+
         session()->flash('msg' , 's: answer deleted successfully');
-        return redirect(route('section.show' , ['section' => $answer->section_id]))
-//            ->with('section' , Section::find($answer->section_id));
-        ;
+        return redirect(route('section.show' , ['section' => $answer->section_id]));
     }
 }

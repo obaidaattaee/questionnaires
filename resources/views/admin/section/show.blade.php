@@ -52,7 +52,7 @@
 
                                 @foreach(json_decode($answer->value) as $key => $value)
                                 @if(is_object($value))
-                                            <td class="border px-12 py-2"><img src="{{asset('storage/images/$value->image->image')}}"> </td>
+                                            <td class="border px-12 py-2"><img src="{{$value->image->image}}"> </td>
                                         @else
                                             <td class="border px-12 py-2">
                                     {{ $value }}

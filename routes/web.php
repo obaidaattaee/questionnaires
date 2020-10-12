@@ -53,7 +53,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 });
 });
 Route::namespace('App\Http\Controllers\Admin')->group(function () {
-    Route::get('/questionnaire/{section}', 'QuestionnaireController@formShow');
+    Route::get('/questionnaire/{section}', 'QuestionnaireController@formShow')->name('questionnaire.show');
     Route::post('/questionnaire/{section}', 'QuestionnaireController@formStore')->name('questionnaire.store');
     Route::get('/file/{section}', 'ExcelFileController@storeExcel')->name('file.store');
     Route::get('/download/file/{section}', 'ExcelFileController@downloadFile')->name('file.download');
