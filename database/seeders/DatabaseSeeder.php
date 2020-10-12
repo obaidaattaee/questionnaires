@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             ['type' => 'date'] ,
             ['type' => 'gender'] ,
             ['type' => 'country'] ,
+            ['type' => 'image'] ,
         ];
 
         FeildType::insert($data);
