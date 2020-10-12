@@ -12,24 +12,24 @@
                 <a href="{{ route('sections') }}">
                     <button
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 mt-4 mx-4  rounded-full">
-                        back to sections
+                        {{ __('Dashboard.Back to Sections') }}
                     </button>
                 </a>
                 <a href="{{ route('section.status' , ['section' => $section->id] ) }}">
                     <button
-                            class="bg-{{ $section->closed_at == null ? "red" : "blue"}}-500 hover:bg-{{ $section->closed_at == null ? "red" : "blue"}}-700 text-white font-bold py-2 px-5 mt-4 mx-4  rounded-full">
-                        {{ $section->closed_at == null ? "close" : "open"}}
+                            class="bg-{{ $section->closed_at == null ? "red" : "green"}}-500 hover:bg-{{ $section->closed_at == null ? "red" : "green"}}-700 text-white font-bold py-2 px-5 mt-4 mx-4  rounded-full">
+                        {{ $section->closed_at == null ? __('Dashboard.Close') : __('Dashboard.Open')}}
                     </button>
                 </a>
 
                 <form class="py-12 mr-1/4" action="{{ route('section.update' , ['section' => $section->id]) }}" method="POST">
                         @method('POST')
                         @csrf
-                        <div class="md:flex md:items-center mb-6">
+                        <div class="md:items-center mb-6">
                             <div class="md:w-1/3">
                                 <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                                        for="inline-full-name">
-                                    Section Title
+                                    {{ __('Dashboard.Title') }}
                                 </label>
                             </div>
                             <div class="md:w-2/3">
@@ -51,7 +51,7 @@
                                 <button
                                     class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                                     type="submit">
-                                    save
+                                    {{ __('Dashboard.Save') }}
                                 </button>
                             </div>
                         </div>
@@ -68,7 +68,8 @@
                 <a href="{{ route('question.create' , ['section' => $section->id]) }}">
                     <button
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 mt-4 mx-4  rounded-full">
-                        create new question
+                        {{ __('Dashboard.Create Question') }}
+
                     </button>
                 </a>
 
@@ -78,11 +79,11 @@
                         <table class="w-full">
                             <thead >
                             <tr>
-                                <th class="w-1/3 px-4 text-left py-2">Title</th>
-                                <th class="w-1/4 px-4 text-left py-2">Create At</th>
-                                <th class="w-1/4 px-4 text-left py-2">Feild Type</th>
+                                <th class=" px-4 py-2">Title</th>
+                                <th class="px-4 py-2">Create At</th>
+                                <th class="px-4 py-2">Feild Type</th>
 
-                                <th class="w-1/6 px-4 text-left py-2">edit / delete</th>
+                                <th class="px-4 py-2"></th>
                             </tr>
                             </thead>
                             <tbody class="px-12">
@@ -95,14 +96,16 @@
                                     <td class="border px-3 py-2">
                                         <a href="{{ route('question.edit' , ['section' => $section->id , 'question' => $question->id ]) }}">
                                             <button
-                                                class="bg-green-400 hover:bg-green-700 text-white font-bold py-2  px-4 rounded-full">
-                                                edit
+
+                                                    class="hover:bg-green-700 text-white font-bold py-2 px-2 rounded-full">
+                                                <img src="https://img.icons8.com/dusk/30/000000/change.png"/>
                                             </button>
+
                                         </a>
-                                        <a href="{{ route('question.delete' , ['section' => $section->id , 'question' => $question->id ]) }}">
-                                            <button
-                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                                                delete
+                                        <a href="{{ route('question.delete' , ['section' => $section->id , 'question' => $question->id ]) }}" >
+                                            <button onclick='return confirm("Are you sure??")' type="submit"
+                                                    class="hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full">
+                                                <img src="https://img.icons8.com/color/30/000000/delete-forever.png"/>
                                             </button>
                                         </a>
                                     </td>

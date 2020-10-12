@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\QuestionAnswer;
 use App\Models\Section;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -68,5 +69,15 @@ class SectionController extends Controller
 //dd($section->closed_at);
         $section->save();
         return redirect(route('section.edit' , ['section' => $section->id]));
+    }
+
+    public function deleteAnswer(QuestionAnswer $answer)
+    {
+        $answer->delete();
+//        dd($answer);
+        session()->flash('msg' , 's: answer deleted successfully');
+        return redirect(route('section.show' , ['section' => $answer->section_id]))
+//            ->with('section' , Section::find($answer->section_id));
+        ;
     }
 }

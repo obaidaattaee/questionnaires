@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'Dashboard' => 'Dashboard',
+    'Section' => 'Section',
+    'Sections' => 'Sections',
+    'Manage Account' => 'Manage Account',
+    'Profile' => 'Profile',
+    'API Tokens' => 'API Tokens',
+    'Manage Team' => 'Manage Team',
+    'Team Settings' => 'Team Settings',
+    'Create New Team' => 'Create New Team',
+    'Switch Teams' => 'Switch Teams',
+    'Logout' => 'Logout',
+    'Create Sections' => 'Create Sections',
+    'Back to Sections' => 'Back to Sections',
+    'Title' => 'Title',
+    'Close' => 'Close',
+    'Open' => 'Open',
+    'Save' => 'Save',
+    'Create Question' => 'Create Question',
+    'Back to Section' => 'Back to Section',
+    'Question Title' => 'Question Title',
+    'Question Type' => 'Question Type',
+];

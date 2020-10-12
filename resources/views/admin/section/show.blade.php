@@ -38,6 +38,7 @@
 
 
                                 <th class="text-left px-4">{{ $value->title }}</th>
+                                <th class="text-left px-4"></th>
 
 
                             @endforeach
@@ -47,11 +48,20 @@
 
                             @foreach($section->questionAnswers as  $answer)
                                 <tr>
-                                @foreach(json_decode($answer->value) as $value)
+
+                                @foreach(json_decode($answer->value) as $key => $value)
 
                                 <td class="border px-12 py-2">{{ $value }}</td>
 
+
                                 @endforeach
+                                    <td class="border px-12 py-2">
+                                        <a href="{{ route('questionanswer.delete' , ['answer' => $answer->id ]) }}" >
+                                            <button onclick='return confirm("Are you sure??")' type="submit"
+                                                    class="hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full">
+                                                <img src="https://img.icons8.com/color/30/000000/delete-forever.png"/>
+                                            </button>
+                                        </a></td>
                                 </tr>
                             @endforeach
                             </tbody>

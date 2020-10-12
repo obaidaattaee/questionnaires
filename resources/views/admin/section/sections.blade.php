@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Sections') }}
+            {{ __('Dashboard.Sections') }}
         </h2>
     </x-slot>
 
@@ -11,8 +11,8 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <a href="{{ route('section.create') }}">
                     <button
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 mt-4 mx-4  rounded-full">
-                        craete new section
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 mt-4 mx-4 float-left rounded-full">
+                        {{ __('Dashboard.Create Sections') }}
                     </button>
                 </a>
                 @if(count($sections) > 0)
@@ -21,11 +21,11 @@
                         <table class="w-full">
                             <thead >
                             <tr>
-                                <th class="px-4 text-left py-2">Title</th>
-                                <th class="px-4 text-left py-2">Create At</th>
-                                <th class="px-4 text-left py-2">Closed At</th>
-                                <th class="px-4 text-left py-2">Count</th>
-                                <th class="px-4 text-left py-2">edit / delete / show</th>
+                                <th class="px-4 py-2">Title</th>
+                                <th class="px-4 py-2">Create At</th>
+                                <th class="px-4 py-2">Closed At</th>
+                                <th class="px-4 py-2">Count</th>
+                                <th class="px-4 py-2">edit / delete / show</th>
                             </tr>
                             </thead>
                             <tbody class="px-12">

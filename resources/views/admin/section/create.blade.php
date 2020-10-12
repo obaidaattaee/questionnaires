@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Create Sections') }}
+            {{ __('Dashboard.Create Sections') }}
         </h2>
     </x-slot>
 
@@ -12,18 +12,18 @@
                 <a href="{{ route('sections') }}">
                     <button
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 mt-4 mx-4  rounded-full">
-                        back to sections
+                        {{ __('Dashboard.Back to Sections') }}
                     </button>
                 </a>
 
                     <form class="py-12 mr-1/4" action="{{ route('section.store') }}" method="POST">
                         @method('POST')
                         @csrf
-                        <div class="md:flex md:items-center mb-6">
+                        <div class="md:items-center mb-6">
                             <div class="md:w-1/3">
                                 <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                                        for="inline-full-name">
-                                    Section Title
+                                    {{ __('Dashboard.Title') }}
                                 </label>
                             </div>
                             <div class="md:w-2/3">

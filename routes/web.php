@@ -38,7 +38,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // end routres for section
 
-
+        Route::get('questionanswer/{answer}' , 'SectionController@deleteAnswer')->name('questionanswer.delete');
     // routes for questiones
     Route::get('/section/{section}/question/create', 'QuestionController@create')->name('question.create');
     Route::post('/section/{section}/question/create', 'QuestionController@store')->name('question.store');

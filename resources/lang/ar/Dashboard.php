@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'Dashboard' => "لوحة التحكم" ,
+    'Section' => "قسم" ,
+    'Sections' => "اقسام" ,
+    'Manage Account' => "ادارة الحساب" ,
+    'Profile' => "الملف الشخصي" ,
+    'API Tokens' => "API Tokens" ,
+    'Manage Team' => "ادارة الفريق" ,
+    'Team Settings' => "اعدادات الفريق" ,
+    'Create New Team' => "اضافة فريق جديد" ,
+    'Switch Teams' => "انتقال الى فريق" ,
+    'Logout' => "خروج" ,
+    'Create Sections' => "اضافة قسم جديد" ,
+    'Back to Sections' => "الرجوع للاقسام" ,
+    'Title' => "العنوان" ,
+    'Close' => "ايقاف" ,
+    'Open' => "تشغيل" ,
+    'Save' => "حفظ" ,
+    'Create Question' => "اضافة سؤال جديد" ,
+    'Back to Section' => "الرجوع الى القسم" ,
+    'Question Title' => "عنوان السؤال" ,
+    'Question Type' => "نوع السؤال" ,
+//    'Profile' => "لوحة التحكم" ,
+//    'Profile' => "لوحة التحكم" ,
+];

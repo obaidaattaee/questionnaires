@@ -65,21 +65,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center p-0 m-0">
         <div class="col-10 col-md-6 " style="border-radius: 25px; box-shadow: 1px 2px 20px 10px #E4E4E4;">
-            <div class="row m-0">
-                <div class="col-12 mt-5">
-                    <p class="text-color-2 m-0" style="font-size: 20px;">
-                        MY PERSONAL
-                    </p>
-                    <p class="text-color-2 m-0" style="font-size: 35px;">
-                        PERECEPTION REPORT
-                    </p>
-                </div>
-                <div class=" col-12">
-                    <p class="text-color-2" style="font-size: 10px;">
-                        You will receive your pdf report via your registered email address shortly.
-                    </p>
-                </div>
-            </div>
+
             <div class="row m-0" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <form action="{{ route('questionnaire.store' , ['section' => $section->id]) }}" method="POST">
                     @csrf

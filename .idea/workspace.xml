@@ -20,9 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec1a0406-3d19-4c12-9400-29f08193fe56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/Dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/fortify.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/fortify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/question/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/question/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/section/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/section/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/section/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/section/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/section/sections.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/section/sections.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/section/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/section/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/forms/questionnaire-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/forms/questionnaire-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,20 +188,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/en" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/section" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/lang/en" />
       <recent name="$PROJECT_DIR$/resources/views/admin/section" />
       <recent name="$PROJECT_DIR$/resources/views/forms" />
       <recent name="$PROJECT_DIR$/database/seeders" />
       <recent name="$PROJECT_DIR$/public/js" />
-      <recent name="$PROJECT_DIR$/public/css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin/section" />
     </key>
   </component>
   <component name="RunManager">
@@ -217,7 +228,8 @@
       <workItem from="1602403918664" duration="4225000" />
       <workItem from="1602417022935" duration="5076000" />
       <workItem from="1602422748764" duration="3145000" />
-      <workItem from="1602428885672" duration="633000" />
+      <workItem from="1602428885672" duration="953000" />
+      <workItem from="1602485818341" duration="4251000" />
     </task>
     <servers />
   </component>
@@ -249,10 +261,14 @@
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="330" y="64" width="655" height="561" key="NewPhpClassDialog/0.0.1280.690@0.0.1280.690" timestamp="1602422626101" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1602422733904">
+    <state x="457" y="270" width="363" height="152" key="NewPhpFileDialog" timestamp="1602486867195">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.690@0.0.1280.690" timestamp="1602422733904" />
+    <state x="457" y="270" width="363" height="152" key="NewPhpFileDialog/0.0.1280.690@0.0.1280.690" timestamp="1602486867195" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1602489628227">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.690@0.0.1280.690" timestamp="1602489628227" />
     <state x="366" y="246" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1602322997441">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
