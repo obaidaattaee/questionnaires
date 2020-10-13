@@ -49,7 +49,7 @@ class QuestionnaireController extends Controller
         }
 
 
-        if (isset($image_feild)){
+        if (! empty($image_feild)){
             $array_validation = array_merge($array_validation , [$image_feild."_file" => 'required']);
             unset($array_validation[$image_feild]);
             $imageName = asset('storage/images/').basename($request[$image_feild]->store("storage/images"));
